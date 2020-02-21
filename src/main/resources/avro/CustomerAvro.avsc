@@ -1,0 +1,577 @@
+[
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "Address",
+    "fields": [
+      {
+        "name": "label",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "type",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "street",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "number",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "district",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "city",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "postalCode",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "state",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "country",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "complement",
+        "type": [ "null", "string" ],
+        "default": null
+      }
+    ]
+  },
+  {
+    "namespace": "ps.customer.event.avro",
+        "type": "record",
+        "name": "Audit",
+        "fields": [
+      {
+        "name": "requestIp",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "requestPort",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "origin",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "sources",
+        "type": [
+               "null",
+               {
+                 "type": "array",
+                 "items": "string"
+               }
+         ],
+        "default": null
+      },
+      {
+        "name": "updateOrigin",
+        "type": [ "null", "string"],
+        "default": null
+      },
+      {
+        "name": "changeAgent",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "input",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "deviceId",
+        "type": [ "null", "string" ],
+        "default": null
+      }
+    ]
+  },
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "StateRegistration",
+    "fields": [
+      {
+        "name": "code",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "exempted",
+        "type": "boolean",
+        "default": false
+      }
+    ]
+  },
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "LegalNature",
+    "fields": [
+        {
+            "name": "code",
+            "type": [ "null", "string" ],
+            "default": null
+        },
+        {
+            "name": "description",
+            "type": [ "null", "string" ],
+            "default": null
+        }
+    ]
+  },
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "Partner",
+    "fields": [
+      {
+        "name": "name",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "bornDate",
+        "type": [ "null", "string" ],
+        "default": null,
+        "logicalType": "timestamp-micros"
+      },
+      {
+        "name": "motherName",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "document",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "partnershipStartDate",
+        "type": [ "null", "string" ],
+        "default": null,
+        "logicalType": "timestamp-micros"
+      },
+      {
+        "name": "partnershipEndDate",
+        "type": [ "null", "string" ],
+        "default": null,
+        "logicalType": "timestamp-micros"
+      },
+      {
+        "name": "ppe",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name":"owner",
+        "type":"boolean",
+        "default": false
+      },
+      {
+        "name": "ofac",
+        "type": [ "null", "string" ],
+        "default": null
+      }
+
+    ]
+  },
+
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "Phone",
+    "fields": [
+      {
+        "name": "label",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "areaCode",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "number",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "obs",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "phoneType",
+        "type": [
+          "null",
+          {
+            "name": "PhoneType",
+            "type": "enum",
+            "symbols": [ "MOBILE", "LANDLINE", "NOT_INFORMED", "UNRECOGNIZED" ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "URL",
+    "fields": [
+      {
+        "name": "label",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "url",
+        "type": [ "null", "string" ],
+        "default": null
+      }
+    ]
+  },
+
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "Business",
+    "fields": [
+      {
+        "name": "businessCategory",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "billIdentification",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "businessCategorySecondary",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "checkoutPhone",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "customerServiceEmail",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "nickname",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "directAcquirer",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "urls",
+        "type": [
+          "null",
+          {
+            "type": "array",
+            "items": "URL"
+          }
+        ],
+        "default": null
+      }
+    ]
+  },
+
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "Options",
+    "fields": [
+      {
+        "name": "enableNewsletter",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "contractAccepted",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "confirmEmailOnPlatform",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "emailAccepted",
+        "type": "boolean",
+        "default": false
+      }
+    ]
+  },
+
+
+  {
+      "namespace": "ps.customer.event.avro",
+      "type": "record",
+      "name": "RegistryInformation",
+      "fields":[
+        {
+          "name": "rg",
+          "type": ["null", "string"],
+          "default": null
+        },
+        {
+          "name": "issuingOranization",
+          "type": ["null", "string"],
+          "default":null
+        },
+        {
+          "name": "issuingState",
+          "type": ["null", "string"],
+          "default":null
+        },
+        {
+          "name": "issuingDate",
+          "type": ["null", "string"],
+          "default":null,
+          "logicalType": "timestamp-micros"
+        }
+      ]
+    },
+
+
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "IndividualEvent",
+    "fields": [
+      {
+        "name": "name",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "bornDate",
+        "type": [ "null", "string" ],
+        "default": null,
+        "logicalType": "timestamp-micros"
+      },
+      {
+        "name": "motherName",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+         "name": "nationality",
+         "type": [ "null", "string" ],
+         "default": null
+      },
+      {
+         "name": "ufNaturality",
+         "type": [ "null", "string" ],
+         "default": null
+      },
+      {
+        "name": "naturality",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+         "name": "registryInformation",
+         "type": [ "null","RegistryInformation"],
+         "default": null
+      }
+    ]
+  },
+
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "LegalEntityEvent",
+    "fields": [
+      {
+        "name": "corporateName",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "tradeName",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "foundationDate",
+        "type": [ "null", "string" ],
+        "default": null,
+        "logicalType": "timestamp-micros"
+      },
+      {
+        "name": "stateRegistration",
+        "type": [ "null", "StateRegistration" ],
+        "default": null
+      },
+      {
+        "name": "partners",
+        "type": [
+          "null",
+          {
+            "type": "array",
+            "items": "Partner"
+          }
+        ],
+        "default": null
+      },
+      {
+        "name": "legalNature",
+        "type": ["null", "LegalNature"],
+        "default": null
+      }
+    ]
+  },
+
+  {
+    "namespace": "ps.customer.event.avro",
+    "type": "record",
+    "name": "CustomerEvent",
+    "fields": [
+      {
+        "name": "individualEvent",
+        "type": [ "null", "IndividualEvent" ],
+        "default": null
+      },
+      {
+        "name": "legalEntityEvent",
+        "type": [ "null", "LegalEntityEvent" ],
+        "default": null
+      },
+      {
+        "name": "customerType",
+        "type": [
+          "null",
+          {
+            "name": "CustomerType",
+            "type": "enum",
+            "symbols": [ "PF", "PJ", "UNRECOGNIZED" ]
+          }
+        ]
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+         "name": "personId",
+         "type": [ "null", "string" ],
+         "default": null
+      },
+      {
+        "name": "email",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "alternativeEmail",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "addresses",
+        "type": [
+          "null",
+          {
+            "type": "array",
+            "items": "Address"
+          }
+        ],
+        "default": null
+      },
+      {
+        "name": "phones",
+        "type": [
+          "null",
+          {
+            "type": "array",
+            "items": "Phone"
+          }
+        ],
+        "default": null
+      },
+      {
+        "name": "audit",
+        "type": [ "null","Audit" ],
+        "default": null
+      },
+      {
+        "name": "business",
+        "type": [ "null", "Business" ],
+        "default": null
+      },
+      {
+        "name": "securityPhrase",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "document",
+        "type": [ "null", "string" ],
+        "default": null
+      },
+      {
+        "name": "metadata",
+        "type": [ "null", { "type": "map", "values": [ "null", "string" ] } ],
+        "default": null
+      },
+      {
+        "name": "options",
+        "type": [ "null", "Options" ],
+        "default": null
+      },
+      {
+        "name": "showAddress",
+        "type": "boolean",
+        "default": false
+      },
+      {
+         "name": "registrationDate",
+         "type": [ "null", "string" ],
+         "default": null,
+         "logicalType": "timestamp-micros"
+      },
+      {
+         "name": "status",
+         "type": [ "null", "string" ],
+         "default": null
+      }
+    ]
+  }
+]

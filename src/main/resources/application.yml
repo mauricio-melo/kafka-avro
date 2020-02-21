@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: rest
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${random.value}
+        serviceName: ${spring.application.name}
+  h2:
+    console:
+      enabled=true:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    metrics:
+      enabled: false
+    prometheus:
+      enabled: true
